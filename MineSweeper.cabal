@@ -1,0 +1,71 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 49fe5d7d66187f4effe5d74466093b7539ed5e23b7f9c41f80f4766b7020bb3b
+
+name:           MineSweeper
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/MineSweeper#readme>
+homepage:       https://github.com/githubuser/MineSweeper#readme
+bug-reports:    https://github.com/githubuser/MineSweeper/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/MineSweeper
+
+library
+  exposed-modules:
+      Minesweeper
+  other-modules:
+      Paths_MineSweeper
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.8 && <5
+    , random
+    , random-shuffle
+    , safe
+  default-language: Haskell2010
+
+executable MineSweeper-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_MineSweeper
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MineSweeper
+    , base >=4.8 && <5
+    , random
+    , random-shuffle
+    , safe
+  default-language: Haskell2010
+
+test-suite MineSweeper-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_MineSweeper
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MineSweeper
+    , base >=4.8 && <5
+    , random
+    , random-shuffle
+    , safe
+  default-language: Haskell2010
